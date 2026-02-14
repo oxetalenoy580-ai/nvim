@@ -8,7 +8,7 @@ vim.g.maplocalleader = " "
 local opts = { noremap = true, silent = true }
 
 -- Disable the spacebar key's default behavior in Normal and Visual modes
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "Disable spacebar default behavior" })
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "learder" })
 
 -- Allow moving the cursor through wrapped lines with j, k
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Move up (wrap-aware)" })
@@ -75,8 +75,12 @@ vim.keymap.set("v", "<", "<gv", vim.tbl_extend("force", opts, { desc = "Indent l
 vim.keymap.set("v", ">", ">gv", vim.tbl_extend("force", opts, { desc = "Indent right (keep selection)" }))
 
 -- Move text up and down
-vim.keymap.set("v", "<A-j>", ":m .+1<CR>==", vim.tbl_extend("force", opts, { desc = "Move selected text down" }))
-vim.keymap.set("v", "<A-k>", ":m .-2<CR>==", vim.tbl_extend("force", opts, { desc = "Move selected text up" }))
+vim.keymap.set("v", "<A-j>", ":m >+1<CR>gv=gv", vim.tbl_extend("force", opts, { desc = "Move selected text down" }))
+vim.keymap.set("v", "<A-k>", ":m <-2<CR>gv=gv", vim.tbl_extend("force", opts, { desc = "Move selected text up" }))
+
+-- move line up and down
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", vim.tbl_extend("force", opts, { desc = "Move line up" }))
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", vim.tbl_extend("force", opts, { desc = "Move line down" }))
 
 -- Keep last yanked when pasting
 vim.keymap.set("v", "p", '"_dP', vim.tbl_extend("force", opts, { desc = "Paste without overwriting register" }))

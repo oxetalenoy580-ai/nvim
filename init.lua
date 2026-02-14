@@ -23,6 +23,7 @@ require("lazy").setup({
 	require("plugins.which-key"),
 	require("plugins.treesitter"),
 	require("plugins.mini"),
+	require("plugins.harpoon"),
 	require("plugins.wilder"),
 	require("plugins.mason"),
 	require("plugins.lspconfig"),

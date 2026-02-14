@@ -29,8 +29,8 @@ return {
 					horizontal = {
 						prompt_position = "bottom",
 						preview_width = 0.6,
-						width = { padding = 0 },
-						height = { padding = 0 },
+						width = 0.7,
+						height = 0.8,
 					},
 				},
 				mappings = {
