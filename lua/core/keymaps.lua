@@ -151,22 +151,22 @@ vim.keymap.set(
 	{ noremap = true, silent = false, desc = "Load saved session" }
 )
 
---term
--- vim.keymap.set(
--- 	{ "n" },
--- 	"<leader>rp",
--- 	'<Cmd>TermExec  cmd="python %"<CR>',
--- 	vim.tbl_extend("force", opts, { desc = "Run current Python file" })
--- )
--- vim.keymap.set(
--- 	{ "n" },
--- 	"<leader>rj",
--- 	'<Cmd>TermExec  cmd="node %"<CR>',
--- 	vim.tbl_extend("force", opts, { desc = "Run current Javascript file" })
--- )
--- vim.keymap.set(
--- 	{ "n" },
--- 	"<leader>rJ",
--- 	'<Cmd>TermExec  cmd="java %"<CR>',
--- 	vim.tbl_extend("force", opts, { desc = "Run current Java file" })
--- )
+--toggleterm
+vim.keymap.set(
+	{ "n" },
+	"<leader>rp",
+	'<Cmd>TermExec  cmd="python %"<CR>',
+	vim.tbl_extend("force", opts, { desc = "Run current Python file" })
+)
+vim.keymap.set(
+	{ "n" },
+	"<leader>rj",
+	'<Cmd>TermExec  cmd="node %"<CR>',
+	vim.tbl_extend("force", opts, { desc = "Run current Javascript file" })
+)
+vim.keymap.set(
+	{ "n" },
+	"<leader>rJ",
+	'<Cmd>TermExec  cmd="java %"<CR>',
+	vim.tbl_extend("force", opts, { desc = "Run current Java file" })
+)
