@@ -109,15 +109,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Toggle diagnostics
 local diagnostics_active = true
 
-vim.keymap.set("n", "<leader>dx", function()
-	diagnostics_active = not diagnostics_active
-
-	if diagnostics_active then
-		vim.diagnostic.enable(true)
-	else
-		vim.diagnostic.enable(false)
-	end
-end, vim.tbl_extend("force", opts, { desc = "Toggle diagnostics display" }))
+-- vim.keymap.set("n", "<leader>dx", function()
+-- 	diagnostics_active = not diagnostics_active
+--
+-- 	if diagnostics_active then
+-- 		vim.diagnostic.enable(true)
+-- 	else
+-- 		vim.diagnostic.enable(false)
+-- 	end
+-- end, vim.tbl_extend("force", opts, { desc = "Toggle diagnostics display" }))
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", function()
@@ -128,18 +128,18 @@ vim.keymap.set("n", "]d", function()
 	vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "Go to next diagnostic message" })
 
-vim.keymap.set(
-	"n",
-	"<leader>do",
-	vim.diagnostic.open_float,
-	vim.tbl_extend("force", opts, { desc = "Open floating diagnostic" })
-)
-vim.keymap.set(
-	"n",
-	"<leader>dl",
-	vim.diagnostic.setloclist,
-	vim.tbl_extend("force", opts, { desc = "Open diagnostics list" })
-)
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>do",
+-- 	vim.diagnostic.open_float,
+-- 	vim.tbl_extend("force", opts, { desc = "Open floating diagnostic" })
+-- )
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>dl",
+-- 	vim.diagnostic.setloclist,
+-- 	vim.tbl_extend("force", opts, { desc = "Open diagnostics list" })
+-- )
 
 -- Save and load session
 vim.keymap.set(

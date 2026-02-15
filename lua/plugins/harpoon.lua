@@ -20,22 +20,22 @@ return {
 		-- NOTE: Experimenting
 		-- Telescope into Harpoon function
 		-- comment this function if you don't like it
-		-- local function toggle_telescope(harpoon_files)
-		-- 	local file_paths = {}
-		-- 	for _, item in ipairs(harpoon_files.items) do
-		-- 		table.insert(file_paths, item.value)
-		-- 	end
-		-- 	require("telescope.pickers")
-		-- 		.new({}, {
-		-- 			prompt_title = "Harpoon",
-		-- 			finder = require("telescope.finders").new_table({
-		-- 				results = file_paths,
-		-- 			}),
-		-- 			previewer = conf.file_previewer({}),
-		-- 			sorter = conf.generic_sorter({}),
-		-- 		})
-		-- 		:find()
-		-- end
+		local function toggle_telescope(harpoon_files)
+			local file_paths = {}
+			for _, item in ipairs(harpoon_files.items) do
+				table.insert(file_paths, item.value)
+			end
+			require("telescope.pickers")
+				.new({}, {
+					prompt_title = "Harpoon",
+					finder = require("telescope.finders").new_table({
+						results = file_paths,
+					}),
+					previewer = conf.file_previewer({}),
+					sorter = conf.generic_sorter({}),
+				})
+				:find()
+		end
 
 		--Harpoon Nav Interface
 		vim.keymap.set("n", "<leader>Ha", function()
@@ -68,8 +68,8 @@ return {
 		end, { desc = "Next Harpoon Buffer" })
 
 		-- Telescope inside Harpoon Window
-		-- vim.keymap.set("n", "<C-f>", function()
-		-- 	toggle_telescope(harpoon:list())
-		-- end)
+		vim.keymap.set("n", "<leader>Hs", function()
+			toggle_telescope(harpoon:list())
+		end, { desc = "Open list in Telescope" })
 	end,
 }
