@@ -194,6 +194,26 @@ return {
 			},
 		})
 
+		-- pyright
+		vim.lsp.config("pyright", {
+			filetypes = { "python" },
+			settings = {
+				pyright = {
+					analyses = {
+						-- 完全关闭 pyright 的类型检查
+						typeCheckingMode = "off",
+						-- 禁用自动整理导入（可选，根据需求调整）
+						disableOrganizeImports = false,
+					},
+				},
+				python = {
+					analyses = {
+						diagnosticMode = "none",
+					},
+				},
+			},
+		})
+
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("emmet_language_server")
 		vim.lsp.enable("emmet_ls")
@@ -201,5 +221,6 @@ return {
 		vim.lsp.enable("gopls")
 		vim.lsp.enable("astro")
 		vim.lsp.enable("tailwindcss")
+		vim.lsp.enable("pyright")
 	end,
 }
