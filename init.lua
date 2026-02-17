@@ -43,4 +43,5 @@ require("lazy").setup({
 	require("plugins.rainbow-delimiters"),
 	require("plugins.indent-blankline"),
 	require("plugins.flash"),
+	require("plugins.venv-selector")
 })
