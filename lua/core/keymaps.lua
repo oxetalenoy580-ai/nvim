@@ -11,8 +11,18 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true, desc = "learder" })
 
 -- Allow moving the cursor through wrapped lines with j, k
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Move up (wrap-aware)" })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Move down (wrap-aware)" })
+vim.keymap.set(
+	{ "n", "v" },
+	"k",
+	"v:count == 0 ? 'gk' : 'k'",
+	{ expr = true, silent = true, desc = "Move up (wrap-aware)" }
+)
+vim.keymap.set(
+	{ "n", "v" },
+	"j",
+	"v:count == 0 ? 'gj' : 'j'",
+	{ expr = true, silent = true, desc = "Move down (wrap-aware)" }
+)
 
 -- clear highlights
 vim.keymap.set("n", "<Esc>", ":noh<CR>", vim.tbl_extend("force", opts, { desc = "Clear search highlights" }))
@@ -158,19 +168,19 @@ vim.keymap.set(
 --toggleterm
 vim.keymap.set(
 	{ "n" },
-	"<leader>rp",
+	"<leader>Rp",
 	'<Cmd>TermExec  cmd="python %"<CR>',
 	vim.tbl_extend("force", opts, { desc = "Run current Python file" })
 )
 vim.keymap.set(
 	{ "n" },
-	"<leader>rj",
+	"<leader>Rj",
 	'<Cmd>TermExec  cmd="node %"<CR>',
 	vim.tbl_extend("force", opts, { desc = "Run current Javascript file" })
 )
 vim.keymap.set(
 	{ "n" },
-	"<leader>rJ",
+	"<leader>RJ",
 	'<Cmd>TermExec  cmd="java %"<CR>',
 	vim.tbl_extend("force", opts, { desc = "Run current Java file" })
 )

@@ -14,6 +14,7 @@ return {
 			typescriptreact = { "biomejs" },
 			svelte = { "biomejs" },
 			python = { "ruff" },
+			java = { "checkstyle" },
 		}
 
 		eslint.args = {

@@ -214,6 +214,27 @@ return {
 			},
 		})
 
+		-- jdtls
+		vim.lsp.config("jdtls", {
+			filetypes = { "java", "groovy" },
+			settings = {
+
+				java = os.getenv("JAVA_HOME"),
+				project = {
+					import = {
+						maven = { enable = true },
+					},
+					referencedLibries = {},
+				},
+				Configuration = {
+					maven = {
+						userSetting = os.getenv("HOME") .. "/.m2/settings.xml",
+					},
+				},
+			},
+		})
+
+		vim.lsp.enable("jdtls")
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("emmet_language_server")
 		vim.lsp.enable("emmet_ls")

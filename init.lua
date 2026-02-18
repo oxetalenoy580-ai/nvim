@@ -16,7 +16,8 @@ rtp:prepend(lazypath)
 
 require("lazy").setup({
 	require("plugins.colorscheme"),
-	require("plugins.oil"),
+	-- require("plugins.oil"),
+	require("plugins.neotree"),
 	require("plugins.lualine"),
 	require("plugins.bufferLine"),
 	require("plugins.telescope"),
@@ -43,5 +44,6 @@ require("lazy").setup({
 	require("plugins.rainbow-delimiters"),
 	require("plugins.indent-blankline"),
 	require("plugins.flash"),
-	require("plugins.venv-selector")
+	require("plugins.venv-selector"),
+	require("plugins.refactor"),
 })
