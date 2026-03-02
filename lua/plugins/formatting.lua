@@ -30,7 +30,7 @@ return {
 				javascriptreact = { "biome-check" },
 				typescriptreact = { "biome-check" },
 				css = { "biome-check" },
-				html = { "biome-check" },
+				html = { "prettier" },
 				svelte = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
@@ -40,7 +40,7 @@ return {
 				-- python = { "black" },
 				markdown = { "prettier", "markdown-toc" },
 				-- ["markdown.mdx"] = { "prettier", "markdownlint", "markdown-toc" },
-				java = { "google-java-format" },
+				java = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

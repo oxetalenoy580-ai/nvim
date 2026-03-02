@@ -75,6 +75,8 @@ return {
 								{ find = "; before #%d+" },
 								{ find = "%d fewer lines" },
 								{ find = "%d more lines" },
+								{ find = "jdtls update" },
+								{ find = "jdtls check" },
 							},
 						},
 						opts = { skip = true },

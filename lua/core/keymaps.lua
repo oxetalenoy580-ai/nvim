@@ -117,7 +117,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- vim.keymap.set("n", "<leader>Y", [["+Y]], vim.tbl_extend("force", opts, { desc = "Yank line to system clipboard" }))
 
 -- Toggle diagnostics
-local diagnostics_active = true
+-- local diagnostics_active = true
 
 -- vim.keymap.set("n", "<leader>dx", function()
 -- 	diagnostics_active = not diagnostics_active

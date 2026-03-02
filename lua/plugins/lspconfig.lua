@@ -217,8 +217,14 @@ return {
 		-- jdtls
 		vim.lsp.config("jdtls", {
 			filetypes = { "java", "groovy" },
+			cmd = {
+				"jdtls",
+				"--jvm-arg=-javaagent:" .. os.getenv("HOME") .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+				"--jvm-arg=-Xbootclasspath/a:"
+					.. os.getenv("HOME")
+					.. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+			},
 			settings = {
-
 				java = os.getenv("JAVA_HOME"),
 				project = {
 					import = {
@@ -234,6 +240,7 @@ return {
 			},
 		})
 
+		vim.lsp.enable("sqlls")
 		vim.lsp.enable("jdtls")
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("emmet_language_server")

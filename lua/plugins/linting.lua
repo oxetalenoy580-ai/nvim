@@ -14,7 +14,7 @@ return {
 			typescriptreact = { "biomejs" },
 			svelte = { "biomejs" },
 			python = { "ruff" },
-			java = { "checkstyle" },
+			-- java = { "sonarlint-language-server" },
 		}
 
 		eslint.args = {

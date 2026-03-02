@@ -1,3 +1,4 @@
+require("core.fix-syntax")
 require("core.keymaps")
 require("core.options")
 
@@ -35,7 +36,7 @@ require("lazy").setup({
 	require("plugins.trouble"),
 	require("plugins.gitsigns"),
 	require("plugins.lazygit"),
-	require("plugins.showkeys"),
+	-- require("plugins.showkeys"),
 	require("plugins.auto-pair"),
 	require("plugins.emment"),
 	require("plugins.smear-cursor"),
@@ -46,4 +47,48 @@ require("lazy").setup({
 	require("plugins.flash"),
 	require("plugins.venv-selector"),
 	require("plugins.refactor"),
+	-- require("plugins.vim-dadbod-ui"),
+	-- require("plugins.syntax"),
 })
+
+-- 在 init.lua 中添加这段代码
+-- local function load_python_queries()
+-- 	local ts_runtime = vim.fn.stdpath("data") .. "/lazy/nvim-treesitter/runtime"
+-- 	local query_dir = ts_runtime .. "/queries/python"
+--
+-- 	-- 强制加载高亮规则
+-- 	for _, query_type in ipairs({ "highlights", "indents", "locals", "injections", "folds" }) do
+-- 		local query_file = query_dir .. "/" .. query_type .. ".scm"
+-- 		if vim.fn.filereadable(query_file) == 1 then
+-- 			local query = table.concat(vim.fn.readfile(query_file), "\n")
+-- 			require("vim.treesitter.query").set("python", query_type, query)
+-- 		end
+-- 	end
+-- end
+--
+-- -- 当打开 Python 文件时执行
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "python",
+-- 	callback = load_python_queries,
+-- })
+--
+-- -- 在 init.lua 中添加这段代码
+-- local function load_js_queries()
+-- 	local ts_runtime = vim.fn.stdpath("data") .. "/lazy/nvim-treesitter/runtime"
+-- 	local query_dir = ts_runtime .. "/queries/javascript"
+--
+-- 	-- 强制加载高亮规则
+-- 	for _, query_type in ipairs({ "highlights", "indents", "locals", "injections", "folds" }) do
+-- 		local query_file = query_dir .. "/" .. query_type .. ".scm"
+-- 		if vim.fn.filereadable(query_file) == 1 then
+-- 			local query = table.concat(vim.fn.readfile(query_file), "\n")
+-- 			require("vim.treesitter.query").set("javascript", query_type, query)
+-- 		end
+-- 	end
+-- end
+--
+-- -- 当打开 Python 文件时执行
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "javascript",
+-- 	callback = load_js_queries,
+-- })

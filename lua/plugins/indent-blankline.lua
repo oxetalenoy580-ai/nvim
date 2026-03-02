@@ -7,8 +7,8 @@ return {
 			char = "▏",
 		},
 		scope = {
-			show_start = false,
-			show_end = false,
+			show_start = true,
+			show_end = true,
 			show_exact_scope = false,
 		},
 		exclude = {

@@ -4,7 +4,7 @@ return {
 		version = "*",
 		opts = {--[[ things you want to change go here]]
 			open_mapping = [[<c-\>]],
-			direction = "horizontal",
+			direction = "float",
 		},
 	},
 }
