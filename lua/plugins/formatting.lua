@@ -41,6 +41,9 @@ return {
 				markdown = { "prettier", "markdown-toc" },
 				-- ["markdown.mdx"] = { "prettier", "markdownlint", "markdown-toc" },
 				java = { "clang-format" },
+				-- nasm = { "asmfmt" },
+				-- asm = { "asmfmt" },
+				-- s = { "asmfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

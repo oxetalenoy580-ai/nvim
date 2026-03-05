@@ -240,6 +240,29 @@ return {
 			},
 		})
 
+		-- -- asm
+		-- vim.lsp.config("asm_lsp", {
+		-- 	-- cmd = { "/home/hhwf/.local/share/nvim/mason/packages/asm-lsp/bin/asm-lsp" },
+		-- 	filetypes = { "nasm", "s", "asm" },
+		-- 	settings = {
+		-- 		asm_lsp = {
+		-- 			assembler = "nasm", -- 指定使用 NASM 汇编器
+		-- 			architecture = "x86_64", -- 指定架构为 x86_64，适配你的系统
+		-- 		},
+		-- 	},
+		-- 	single_file_support = true, -- 汇编无项目根目录，必须开
+		-- 	capabilities = capabilities, -- 继承全局 capabilities
+		-- 	on_attach = function(client, bufnr)
+		-- 		client.server_capabilities.diagnosticProvider = false
+		-- 	end,
+		-- })
+
+		vim.lsp.config("bashls", {
+			filetypes = { "sh", "bash", "zsh" },
+		})
+
+		-- vim.lsp.enable("asm_lsp")
+		vim.lsp.enable("bashls")
 		vim.lsp.enable("sqlls")
 		vim.lsp.enable("jdtls")
 		vim.lsp.enable("lua_ls")

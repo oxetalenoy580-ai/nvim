@@ -15,6 +15,8 @@ return {
 			svelte = { "biomejs" },
 			python = { "ruff" },
 			-- java = { "sonarlint-language-server" },
+			-- nasm = { "nasm" },
+			-- asm = { "nasm" },
 		}
 
 		eslint.args = {

@@ -35,7 +35,7 @@ return {
 			automatic_enable = false,
 			-- servers for mason to install
 			ensure_installed = {
-				-- "lua_ls",
+				"lua_ls",
 				"ts_ls", -- currently using a ts plugin
 				"html",
 				"cssls",
@@ -48,13 +48,15 @@ return {
 				"pyright",
 				"eslint",
 				-- "marksman",
+				"ruff",
+				"jdtls",
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
 				"prettier", -- prettier formatter
-				-- "stylua", -- lua formatter
+				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"pylint",
 				-- "clangd",

@@ -1,7 +1,7 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
 	main = "ibl",
-	event = { "BufReadPost", "BufNewFile" }, -- 仅在打开/新建文件时加载，减少启动耗时
+	event = { "BufReadPost", "BufNewFile" },
 	opts = {
 		indent = {
 			char = "▏",
