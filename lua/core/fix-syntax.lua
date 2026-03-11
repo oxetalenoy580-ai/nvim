@@ -117,7 +117,8 @@ local function fix_ts_queries()
 	local ts_dir = vim.fn.stdpath("data") .. "/site/queries"
 	local lazy_ts_dir = vim.fn.stdpath("data") .. "/lazy/nvim-treesitter/runtime/queries"
 
-	local langs = { "ecma", "html", "javascript", "jsx", "lua", "python", "sql", "tsx", "typescript", "nasm" }
+	local langs =
+		{ "ecma", "html", "javascript", "jsx", "lua", "python", "sql", "tsx", "typescript", "nasm", "c", "cpp", "java" }
 	for _, lang in ipairs(langs) do
 		local query_dir = vim.fn.isdirectory(lazy_ts_dir .. "/" .. lang) == 1 and lazy_ts_dir .. "/" .. lang
 			or ts_dir .. "/" .. lang

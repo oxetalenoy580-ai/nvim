@@ -44,6 +44,8 @@ return {
 				-- nasm = { "asmfmt" },
 				-- asm = { "asmfmt" },
 				-- s = { "asmfmt" },
+				cpp = { "clang-format" },
+				c = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -65,6 +67,15 @@ return {
 		}
 		conform.formatters.shfmt = {
 			prepend_args = { "-i", "4" },
+		}
+
+		conform.formatters["clang-format"] = {
+			args = {
+				"--style",
+				"{BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: Never, ColumnLimit: 100}",
+				"--fallback-style",
+				"LLVM",
+			},
 		}
 
 		vim.keymap.set({ "n", "v" }, "<leader>cm", function()

@@ -1,6 +1,7 @@
 require("core.fix-syntax")
 require("core.keymaps")
 require("core.options")
+require("core.neovide")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -39,7 +40,7 @@ require("lazy").setup({
 	-- require("plugins.showkeys"),
 	require("plugins.auto-pair"),
 	require("plugins.emment"),
-	require("plugins.smear-cursor"),
+	-- require("plugins.smear-cursor"),
 	require("plugins.dashboard"),
 	require("plugins.toggleterm"),
 	require("plugins.rainbow-delimiters"),
@@ -49,4 +50,7 @@ require("lazy").setup({
 	require("plugins.refactor"),
 	-- require("plugins.vim-dadbod-ui"),
 	-- require("plugins.syntax"),
+	require("plugins.opencode"),
+	require("plugins.dap"),
+	require("plugins.multicursor"),
 })

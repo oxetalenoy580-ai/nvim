@@ -53,8 +53,8 @@ vim.keymap.set("n", "<leader>bx", ":Bdelete!<CR>", vim.tbl_extend("force", opts,
 -- Window management
 vim.keymap.set("n", "<leader>v", "<C-w>v", vim.tbl_extend("force", opts, { desc = "Split window vertically" }))
 vim.keymap.set("n", "<leader>h", "<C-w>s", vim.tbl_extend("force", opts, { desc = "Split window horizontally" }))
-vim.keymap.set("n", "<leader>se", "<C-w>=", vim.tbl_extend("force", opts, { desc = "Equalize split window sizes" }))
-vim.keymap.set("n", "<leader>sx", ":close<CR>", vim.tbl_extend("force", opts, { desc = "Close current split window" }))
+-- vim.keymap.set("n", "<leader>se", "<C-w>=", vim.tbl_extend("force", opts, { desc = "Equalize split window sizes" }))
+-- vim.keymap.set("n", "<leader>sx", ":close<CR>", vim.tbl_extend("force", opts, { desc = "Close current split window" }))
 
 -- Navigate between splits
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>", vim.tbl_extend("force", opts, { desc = "Move to upper split window" }))
@@ -104,6 +104,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Diagnostic keymaps
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Go to previous diagnostic message" })
+
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Go to next diagnostic message" })
+
 -- Replace word under cursor
 -- vim.keymap.set(
 -- 	"n",
@@ -129,15 +138,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- 	end
 -- end, vim.tbl_extend("force", opts, { desc = "Toggle diagnostics display" }))
 
--- Diagnostic keymaps
-vim.keymap.set("n", "[d", function()
-	vim.diagnostic.jump({ count = -1, float = true })
-end, { desc = "Go to previous diagnostic message" })
-
-vim.keymap.set("n", "]d", function()
-	vim.diagnostic.jump({ count = 1, float = true })
-end, { desc = "Go to next diagnostic message" })
-
 -- vim.keymap.set(
 -- 	"n",
 -- 	"<leader>do",
@@ -152,35 +152,35 @@ end, { desc = "Go to next diagnostic message" })
 -- )
 
 -- Save and load session
-vim.keymap.set(
-	"n",
-	"<leader>ss",
-	":mksession! .session.vim<CR>",
-	{ noremap = true, silent = false, desc = "Save current session" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>sl",
-	":source .session.vim<CR>",
-	{ noremap = true, silent = false, desc = "Load saved session" }
-)
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>ss",
+-- 	":mksession! .session.vim<CR>",
+-- 	{ noremap = true, silent = false, desc = "Save current session" }
+-- )
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>sl",
+-- 	":source .session.vim<CR>",
+-- 	{ noremap = true, silent = false, desc = "Load saved session" }
+-- )
 
 --toggleterm
-vim.keymap.set(
-	{ "n" },
-	"<leader>Rp",
-	'<Cmd>TermExec  cmd="python %"<CR>',
-	vim.tbl_extend("force", opts, { desc = "Run current Python file" })
-)
-vim.keymap.set(
-	{ "n" },
-	"<leader>Rj",
-	'<Cmd>TermExec  cmd="node %"<CR>',
-	vim.tbl_extend("force", opts, { desc = "Run current Javascript file" })
-)
-vim.keymap.set(
-	{ "n" },
-	"<leader>RJ",
-	'<Cmd>TermExec  cmd="java %"<CR>',
-	vim.tbl_extend("force", opts, { desc = "Run current Java file" })
-)
+-- vim.keymap.set(
+-- 	{ "n" },
+-- 	"<leader>Rp",
+-- 	'<Cmd>TermExec  cmd="python %"<CR>',
+-- 	vim.tbl_extend("force", opts, { desc = "Run current Python file" })
+-- )
+-- vim.keymap.set(
+-- 	{ "n" },
+-- 	"<leader>Rj",
+-- 	'<Cmd>TermExec  cmd="node %"<CR>',
+-- 	vim.tbl_extend("force", opts, { desc = "Run current Javascript file" })
+-- )
+-- vim.keymap.set(
+-- 	{ "n" },
+-- 	"<leader>RJ",
+-- 	'<Cmd>TermExec  cmd="java %"<CR>',
+-- 	vim.tbl_extend("force", opts, { desc = "Run current Java file" })
+-- )

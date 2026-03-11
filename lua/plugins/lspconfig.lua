@@ -261,7 +261,20 @@ return {
 			filetypes = { "sh", "bash", "zsh" },
 		})
 
+		vim.lsp.config("clangd", {
+			filetypes = { "cpp", "c", "objc", "objcpp" },
+			cmd = {
+				"clangd",
+				"--background-index",
+				"--clang-tidy",
+				"--header-insertion=never",
+				"--completion-style=detailed",
+			},
+
+			capabilities = vim.lsp.protocol.make_client_capabilities(),
+		})
 		-- vim.lsp.enable("asm_lsp")
+		vim.lsp.enable("clangd")
 		vim.lsp.enable("bashls")
 		vim.lsp.enable("sqlls")
 		vim.lsp.enable("jdtls")
