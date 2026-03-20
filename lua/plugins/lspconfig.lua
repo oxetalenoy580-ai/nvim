@@ -215,52 +215,55 @@ return {
 		})
 
 		-- jdtls
-		vim.lsp.config("jdtls", {
-			filetypes = { "java", "groovy" },
-			cmd = {
-				"jdtls",
-				"--jvm-arg=-javaagent:" .. os.getenv("HOME") .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-				"--jvm-arg=-Xbootclasspath/a:"
-					.. os.getenv("HOME")
-					.. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-			},
-			settings = {
-				java = os.getenv("JAVA_HOME"),
-				project = {
-					import = {
-						maven = { enable = true },
-					},
-					referencedLibries = {},
-				},
-				Configuration = {
-					maven = {
-						userSetting = os.getenv("HOME") .. "/.m2/settings.xml",
-					},
-				},
-			},
-		})
-
-		-- -- asm
-		-- vim.lsp.config("asm_lsp", {
-		-- 	-- cmd = { "/home/hhwf/.local/share/nvim/mason/packages/asm-lsp/bin/asm-lsp" },
-		-- 	filetypes = { "nasm", "s", "asm" },
+		-- vim.lsp.config("jdtls", {
+		-- 	filetypes = { "java", "groovy" },
+		-- 	cmd = {
+		-- 		"jdtls",
+		-- 		"--jvm-arg=-javaagent:" .. os.getenv("HOME") .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+		-- 		"--jvm-arg=-Xbootclasspath/a:"
+		-- 			.. os.getenv("HOME")
+		-- 			.. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+		-- 	},
 		-- 	settings = {
-		-- 		asm_lsp = {
-		-- 			assembler = "nasm", -- 指定使用 NASM 汇编器
-		-- 			architecture = "x86_64", -- 指定架构为 x86_64，适配你的系统
+		-- 		java = os.getenv("JAVA_HOME"),
+		-- 		project = {
+		-- 			import = {
+		-- 				maven = { enable = true },
+		-- 			},
+		-- 			referencedLibries = {},
+		-- 		},
+		-- 		Configuration = {
+		-- 			maven = {
+		-- 				userSetting = os.getenv("HOME") .. "/.m2/settings.xml",
+		-- 			},
 		-- 		},
 		-- 	},
-		-- 	single_file_support = true, -- 汇编无项目根目录，必须开
-		-- 	capabilities = capabilities, -- 继承全局 capabilities
-		-- 	on_attach = function(client, bufnr)
-		-- 		client.server_capabilities.diagnosticProvider = false
-		-- 	end,
 		-- })
 
+		-- asm
+		vim.lsp.config("asm_lsp", {
+			-- cmd = { "/home/hhwf/.local/share/nvim/mason/packages/asm-lsp/bin/asm-lsp" },
+			filetypes = { "masm", "s", "asm" },
+			settings = {
+				asm_lsp = {
+					assembler = "masm", -- 指定使用 NASM 汇编器
+					architecture = "x86_64", -- 指定架构为 x86_64，适配你的系统
+					diagnostics = false,
+				},
+			},
+			single_file_support = true, -- 汇编无项目根目录，必须开
+			capabilities = capabilities, -- 继承全局 capabilities
+			-- on_attach = function(client, bufnr)
+			-- 	client.server_capabilities.diagnosticProvider = false
+			-- end,
+		})
+
+		-- bash
 		vim.lsp.config("bashls", {
 			filetypes = { "sh", "bash", "zsh" },
 		})
 
+		-- clangd
 		vim.lsp.config("clangd", {
 			filetypes = { "cpp", "c", "objc", "objcpp" },
 			cmd = {
@@ -273,11 +276,13 @@ return {
 
 			capabilities = vim.lsp.protocol.make_client_capabilities(),
 		})
+
 		-- vim.lsp.enable("asm_lsp")
+		vim.lsp.enable("sonarlint")
 		vim.lsp.enable("clangd")
 		vim.lsp.enable("bashls")
 		vim.lsp.enable("sqlls")
-		vim.lsp.enable("jdtls")
+		-- vim.lsp.enable("jdtls")
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("emmet_language_server")
 		vim.lsp.enable("emmet_ls")

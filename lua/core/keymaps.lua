@@ -33,8 +33,9 @@ vim.keymap.set("n", "<Esc>", ":noh<CR>", vim.tbl_extend("force", opts, { desc = 
 -- quit file
 -- vim.keymap.set("n", "<C-q>", "<cmd> q <CR>", vim.tbl_extend("force", opts, { desc = "Quit current buffer" }))
 
--- delete single character without copying into register
-vim.keymap.set("n", "x", '"_x', vim.tbl_extend("force", opts, { desc = "Delete single char (no register copy)" }))
+-- delete without copying into register
+vim.keymap.set({ "n", "v" }, "x", '"_x', vim.tbl_extend("force", opts, { desc = "Delete char (no register copy)" }))
+vim.keymap.set("n", "xx", [["_dd]], vim.tbl_extend("force", opts, { desc = "Delete line (no register copy)" }))
 
 -- Vertical scroll and center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", vim.tbl_extend("force", opts, { desc = "Scroll down and center cursor" }))

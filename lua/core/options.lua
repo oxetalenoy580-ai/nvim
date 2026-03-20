@@ -1,6 +1,6 @@
 vim.o.hlsearch = false -- Set highlight on search
 vim.wo.number = true -- Make line numbers default
-vim.o.mouse = "" -- Enable mouse mode
+vim.o.mouse = "a" -- Enable mouse mode
 vim.o.clipboard = "unnamedplus" -- Sync clipboard between OS and Neovim.
 vim.o.breakindent = true -- Enable break indent
 vim.o.undofile = true -- Save undo history
@@ -40,4 +40,3 @@ vim.o.autoindent = true -- copy indent from current line when starting new one
 vim.opt.shortmess:append("c") -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append("-") -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
-

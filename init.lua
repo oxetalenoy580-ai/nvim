@@ -53,4 +53,5 @@ require("lazy").setup({
 	require("plugins.opencode"),
 	require("plugins.dap"),
 	require("plugins.multicursor"),
+	require("plugins.nvim-jdtls"),
 })
