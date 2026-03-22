@@ -68,7 +68,7 @@ return {
 			signs = {
 				text = signs,
 			},
-			virtual_text = true,
+			virtual_text = false,
 			underline = true,
 			update_in_insert = false,
 		})
@@ -214,32 +214,6 @@ return {
 			},
 		})
 
-		-- jdtls
-		-- vim.lsp.config("jdtls", {
-		-- 	filetypes = { "java", "groovy" },
-		-- 	cmd = {
-		-- 		"jdtls",
-		-- 		"--jvm-arg=-javaagent:" .. os.getenv("HOME") .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-		-- 		"--jvm-arg=-Xbootclasspath/a:"
-		-- 			.. os.getenv("HOME")
-		-- 			.. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-		-- 	},
-		-- 	settings = {
-		-- 		java = os.getenv("JAVA_HOME"),
-		-- 		project = {
-		-- 			import = {
-		-- 				maven = { enable = true },
-		-- 			},
-		-- 			referencedLibries = {},
-		-- 		},
-		-- 		Configuration = {
-		-- 			maven = {
-		-- 				userSetting = os.getenv("HOME") .. "/.m2/settings.xml",
-		-- 			},
-		-- 		},
-		-- 	},
-		-- })
-
 		-- asm
 		vim.lsp.config("asm_lsp", {
 			-- cmd = { "/home/hhwf/.local/share/nvim/mason/packages/asm-lsp/bin/asm-lsp" },
@@ -273,7 +247,6 @@ return {
 				"--header-insertion=never",
 				"--completion-style=detailed",
 			},
-
 			capabilities = vim.lsp.protocol.make_client_capabilities(),
 		})
 
@@ -282,7 +255,6 @@ return {
 		vim.lsp.enable("clangd")
 		vim.lsp.enable("bashls")
 		vim.lsp.enable("sqlls")
-		-- vim.lsp.enable("jdtls")
 		vim.lsp.enable("lua_ls")
 		vim.lsp.enable("emmet_language_server")
 		vim.lsp.enable("emmet_ls")

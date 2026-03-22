@@ -85,9 +85,9 @@ vim.keymap.set("i", "kj", "<ESC>", vim.tbl_extend("force", opts, { desc = "Exit 
 vim.keymap.set("v", "<", "<gv", vim.tbl_extend("force", opts, { desc = "Indent left (keep selection)" }))
 vim.keymap.set("v", ">", ">gv", vim.tbl_extend("force", opts, { desc = "Indent right (keep selection)" }))
 
--- Move text up and down
-vim.keymap.set("v", "<A-j>", ":m >+1<CR>gv=gv", vim.tbl_extend("force", opts, { desc = "Move selected text down" }))
-vim.keymap.set("v", "<A-k>", ":m <-2<CR>gv=gv", vim.tbl_extend("force", opts, { desc = "Move selected text up" }))
+-- move selection up and down
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", vim.tbl_extend("force", opts, { desc = "move selection up" }))
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", vim.tbl_extend("force", opts, { desc = "move selection down" }))
 
 -- move line up and down
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", vim.tbl_extend("force", opts, { desc = "Move line up" }))
@@ -95,15 +95,6 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", vim.tbl_extend("force", opts, { des
 
 -- Keep last yanked when pasting
 vim.keymap.set("v", "p", '"_dP', vim.tbl_extend("force", opts, { desc = "Paste without overwriting register" }))
-
--- Yank（复制）时高亮提示
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
-})
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", function()
