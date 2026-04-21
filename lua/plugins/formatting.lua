@@ -40,7 +40,7 @@ return {
 				-- python = { "black" },
 				markdown = { "prettier", "markdown-toc" },
 				-- ["markdown.mdx"] = { "prettier", "markdownlint", "markdown-toc" },
-				java = { "google-java-format" },
+				-- java = { "google-java-format" },
 				-- nasm = { "asmfmt" },
 				-- asm = { "asmfmt" },
 				-- s = { "asmfmt" },

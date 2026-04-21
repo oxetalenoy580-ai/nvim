@@ -4,8 +4,9 @@ return {
 		version = "*",
 		opts = {--[[ things you want to change go here]]
 			open_mapping = [[<c-\>]],
-			direction = "float",
-			-- size = 50,
+			-- direction = "vertical",
+			direction = "vertical",
+			size = 50,
 			shell = "/usr/bin/fish",
 		},
 	},

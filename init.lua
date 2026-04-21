@@ -40,7 +40,6 @@ require("lazy").setup({
 	require("plugins.toggleterm"),
 	require("plugins.rainbow-delimiters"),
 	require("plugins.indent"),
-	require("plugins.flash"),
 	require("plugins.venv-selector"),
 	require("plugins.refactor"),
 	require("plugins.opencode"),
@@ -48,7 +47,8 @@ require("lazy").setup({
 	require("plugins.multicursor"),
 	require("plugins.nvim-jdtls"),
 	require("plugins.hightlight"),
-	require("plugins.dashboard"),
+    require("plugins.snack")
+	-- require("plugins.flash"),
 	-- require("plugins.oil"),
 	-- require("plugins.trouble"),
 	-- require("plugins.showkeys"),
